@@ -1,5 +1,5 @@
 file extensions:
-	.swf = compiled flash game (open the game with flash player or a web browser)
+	.swf = compiled flash game (open the game with flash player or a web browser)\n
 	.fla = code for flash game (open with adobe animate or adobe flash)
 	.t = turning code (open with a text editor or turing, if you want to run the code)
 	.apk = android app (open with an android phone or emulator

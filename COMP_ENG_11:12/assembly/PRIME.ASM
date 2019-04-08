@@ -1,0 +1,50 @@
+
+;The program will take an 8 bit number stored in register B and 
+;determine if it is a prime number. If it is, it sets register C 
+;to be 1, otherwise it sets register C to be 0.
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+
+MVI B, 0bh ;INPUT
+MOV E, B  ;COPY OF INPUT
+MVI C, 1H ;PRIME BY DEFAULT
+MVI D, 1H ;COUNTER
+
+MOV A, B
+CPI 2H	;if input >= 2, CHECK IF PRIME, OTHERWISE NOTPRIME & SET
+JNC LOOP1 ;C AS 0H. THEN HALT.
+MVI C, 0H
+hlt
+
+LOOP1: NOP ;OUTER LOOP GOING THROUGH ALL THE NUMBERS FROM 2-THE INPUT
+
+MOV B, E ;RESET THE INPUT
+
+INR D ;INCREMENT THE CURRENT NUMBER (i IN A FOR LOOP)
+
+MOV A, D 
+CMP B	;IF i < INPUT, GO TO THE INNER LOOP, OTHERWISE HALT
+JC LOOP2
+
+hlt
+
+LOOP2: NOP ;INNER LOOP
+
+MOV A, B
+SUB D ;SUBSTRACT i FROM THE INPUT
+MOV B, A
+
+JM LOOP1 ;IF INPUT < 0, NOT DIVISIBLE BY i SO GO LEAVE INNER LOOP
+JNZ LOOP2 ;IF INPUT > 0, GO BACK TO TOP OF INNER LOOP
+
+MVI C, 0H ;IF INPUT = 0, DIVISIBLE SO NOT PRIME (SET REGISTER C 
+hlt 	  ;TO 0 AND HALT)
+
+
+

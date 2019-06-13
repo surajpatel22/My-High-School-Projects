@@ -12,4 +12,5 @@
 	.ino 	= arduino code (open with text editor or arduino app [requires breadboarding and an arduino])
 	.cpp 	= c++ code (open in a text editor or c++ IDE if you want to run it)
 	.asm 	= assembly code (open in a text editor or IDE that supports assembly code)
-	.circ	= logisim file (open in logisim to view logic circuit)
+	.circ	= simulated logic circuit (open in logisim to view logic circuit)
+	.fzz	= PCB design (open in fritzing to view the Printed Circuit Board design) 
